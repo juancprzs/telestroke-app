@@ -48,7 +48,7 @@ function chadsvasc(radio_names) {
 	var score = 0;
 	for (var i = 0; i < radios.length; i++) {
 		if(radios[i].checked) {
-			score += radios[i].value;
+			score += parseInt(radios[i].value);
 		}
 	}
 	// $('#label-puntaje-chadsvasc').empty();
