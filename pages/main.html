@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body style="background-color: #eee;">
 	<h1>TeleStroke</h1>
 	<p>Bienvenido al sistema TeleStroke</p>
 	<div class='form-group rounded border' id='datos-personales'>
@@ -53,14 +53,14 @@
 		<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
 			<form class="radio" name='yes_no_radios'>
 				<span class="row">
-					<span class="col-6">
+					<span class="col-7">
 						<p>¿Tiene el paciente antecedentes de fibrilación auricular?</p>
 					</span>
 					<span class="col-4">
 						<label class="radio"> Sí</label>
 						<label class="radio"> No</label>
 					</span>
-					<span class="col">
+					<span class="col-1">
 						<input type="radio" name="yes_no" value='yes'><br>
 						<input type="radio" name="yes_no" value='no'>
 					</span>
@@ -68,12 +68,13 @@
 			</form>
 		</span>
 		
-		<div class='form-group rounded border' id='CHA2DS2-VAS2C' style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
+		<div class='form-group rounded border' id='CHA2DS2-VAS2C' style='width: 98%; margin-right: 1%;margin-left: 1%; margin-bottom: 1%;'>
 			<h3>Escala CHA2DS2-VAS2C</h3>
+			<h4>Seleccione a continuación la opción según corresponda a la historia del paciente</h4>
 			<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
 				<form class="radio rounded border" name='edad_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-6">
+						<span class="col-7">
 							<p><b>Edad</b></p>
 						</span>
 						<span class="col-4">
@@ -81,45 +82,118 @@
 							<label class="radio">65-74<sup>+1</sup></label>
 							<label class="radio">&ge; 75<sup>+2</sup></label>
 						</span>
-						<span class="col">
-							<input type="radio" name="which_edad" value='cat1'><br>
-							<input type="radio" name="which_edad" value='cat2'><br>
-							<input type="radio" name="which_edad" value='cat3'><br>
+						<span class="col-1">
+							<input type="radio" name="which_edad" value='0' onclick='chadsvasc();'><br>
+							<input type="radio" name="which_edad" value='1' onclick='chadsvasc();'><br>
+							<input type="radio" name="which_edad" value='2' onclick='chadsvasc();'><br>
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='sexo_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-6">
+						<span class="col-7">
 							<p><b>Sexo</b></p>
 						</span>
 						<span class="col-4">
 							<label class="radio">Hombre<sup>+0</sup></label>
 							<label class="radio">Mujer<sup>+1</sup></label>
 						</span>
-						<span class="col">
-							<input type="radio" name="which_sexo" value='cat1'><br>
-							<input type="radio" name="which_sexo" value='cat2'><br>
+						<span class="col-1">
+							<input type="radio" name="which_sexo" value='0'><br>
+							<input type="radio" name="which_sexo" value='1'><br>
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-6">
+						<span class="col-7">
 							<p><b>Historia de falla cardiaca</b></p>
 						</span>
 						<span class="col-4">
 							<label class="radio">No<sup>+0</sup></label>
 							<label class="radio">Sí<sup>+1</sup></label>
 						</span>
-						<span class="col">
-							<input type="radio" name="which_falla_cardiaca" value='cat1'><br>
-							<input type="radio" name="which_falla_cardiaca" value='cat2'><br>
+						<span class="col-1">
+							<input type="radio" name="which_falla_cardiaca" value='0'><br>
+							<input type="radio" name="which_falla_cardiaca" value='1'><br>
 						</span>
 					</span>
 				</form>
+
+				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-7">
+							<p><b>Historia de hipertensión</b></p>
+						</span>
+						<span class="col-4">
+							<label class="radio">No<sup>+0</sup></label>
+							<label class="radio">Sí<sup>+1</sup></label>
+						</span>
+						<span class="col-1">
+							<input type="radio" name="which_hipertension" value='0'><br>
+							<input type="radio" name="which_hipertension" value='1'><br>
+						</span>
+					</span>
+				</form>
+
+				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-7">
+							<p><b>Historia de ataque isquémico transitorio, ataque cerebrovascular o tromboembolismo</b></p>
+						</span>
+						<span class="col-4">
+							<label class="radio">No<sup>+0</sup></label>
+							<label class="radio">Sí<sup>+1</sup></label>
+						</span>
+						<span class="col-1">
+							<input type="radio" name="which_historia" value='0'><br>
+							<input type="radio" name="which_historia" value='1'><br>
+						</span>
+					</span>
+				</form>
+
+				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-7">
+							<p><b>Historia de enfermedad vascular</b></p>
+						</span>
+						<span class="col-4">
+							<label class="radio">No<sup>+0</sup></label>
+							<label class="radio">Sí<sup>+1</sup></label>
+						</span>
+						<span class="col-1">
+							<input type="radio" name="which_enfermedad_vascular" value='0'><br>
+							<input type="radio" name="which_enfermedad_vascular" value='1'><br>
+						</span>
+					</span>
+				</form>
+
+				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-7">
+							<p><b>Historia de diabetes</b></p>
+						</span>
+						<span class="col-4">
+							<label class="radio">No<sup>+0</sup></label>
+							<label class="radio">Sí<sup>+1</sup></label>
+						</span>
+						<span class="col-1">
+							<input type="radio" name="which_diabetes" value='0'><br>
+							<input type="radio" name="which_diabetes" value='1'><br>
+						</span>
+					</span>
+				</form>
+
+				<span class="row">
+					<span class="col">
+						<p><b>Puntaje</b></p>
+					</span>
+					<span class="col">
+						<label class="radio" id="label-puntaje-chadsvasc">0</label>
+					</span>
+				</span>
 			</span>
 
 		</div>
