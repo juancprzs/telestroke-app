@@ -61,7 +61,7 @@
 						<p>¿Tiene el paciente antecedentes de fibrilación auricular?</p>
 					</span>
 					<span class="col-6">
-						
+
 						<span class="row">
 							<span class="col-10">
 								<label class="radio">Sí</label>
@@ -536,6 +536,196 @@
 			</span>
 
 		</div>
+
+		<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
+			<form class="radio" name='yes_no_rcp'>
+				<span class="row">
+					<span class="col-6">
+						<p>¿Hubo necesidad de realizar reanimación cardiopulmonar?</p>
+					</span>
+					<span class="col-6">
+						
+						<span class="row">
+							<span class="col-10">
+								<label class="radio">Sí</label>
+							</span>
+							<span class="col-2">
+								<input type="radio" name="radio_rcp" value='yes'>
+							</span>
+						</span>
+
+						<span class="row">
+							<span class="col-10">
+								<label class="radio">No</label>
+							</span>
+							<span class="col-2">
+								<input type="radio" name="radio_rcp" value='no'>
+							</span>
+						</span>
+					</span>
+
+				</span>
+			</form>
+		</span>
+	
+		<div class='form-group rounded border' id='nihss' style='width: 98%; margin-right: 1%;margin-left: 1%; margin-bottom: 1%;'>
+			<h3>Escala de NIHSS</h3>
+			<h4>Seleccione a continuación la opción según corresponda a la historia del paciente</h4>
+			<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
+
+				<!-- Item 1A -->
+				<form class="radio rounded border" name='1a_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>1A: Nivel de conciencia</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Alerta<sup>+0</sup></b>: plenamente despierto y con capacidad normal de respuesta.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Somnolencia<sup>+1</sup></b>: no alerta, pero puede ser despertado con estímulo mínimo para responder y obedecer. Se duerme si no se estimula.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Estupor<sup>+2</sup></b>: se alerta con estímulo repetitivo o intenso (doloroso), pero lo hace brevemente y no verbaliza con claridad, no obedece órdenes y sus movimientos son de evitación.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Coma<sup>+3</sup></b>: respuestas reflejas únicamente, no abre los ojos o no tiene respuestas alguna, arrefléxico, flácido, estado vegetativo o equivalente.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='3' onclick='glasgow();'>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+
+				<!-- Item 1B -->
+				<form class="radio rounded border" name='1b_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>1B: Nivel de conciencia; preguntas verbales:<br>¿en qué mes estamos?<br>¿qué edad tiene?</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Ambas respuestas son correctas<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Una respuesta correcta<sup>+1</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Ninguna respuesta correcta<sup>+2</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> la respuesta debe ser correcta, no se admite acreditar la calificación por una respuesta parcial o "casi" correcta. Los pacientes afásicos o estuporosos que no entienden las preguntas puntúan 2. En caso de IOT, disartría severa de cualquier origen, diferencias de idioma y otro problema no causado por afasia puntúan 1.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+
+				<!-- Item 1C -->
+				<form class="radio rounded border" name='1c_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>1C: Nivel de conciencia; órdenes motoras:<br>1. Cierre los ojos, después ábralos.<br>2. Cierre la mano, después ábrala.</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Ambas respuestas son correctas<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Una respuesta correcta<sup>+1</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Ninguna respuesta correcta<sup>+2</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-1a" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> si no hay respuesta, la orden puede darse por medio de gestos (como pantomima). Solo se califica el primer intento.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+				
+				<label id="nihss-completado" style='font-size: 140%; color: red;'>Sin completar</label>
+				<span class="row">
+					<span class="col">
+						<p><b>Puntaje</b></p>
+					</span>
+					<span class="col">
+						<label class="radio" id="label-puntaje-nihss" style='font-size: 140%; color: red;'>0</label>
+					</span>
+				</span>
+			</span>
+
+		</div>
+
+
+
 	</div>
 
 

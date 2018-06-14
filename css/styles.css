@@ -70,3 +70,7 @@ textarea {
     margin-right: 5%;
     margin-left: 5%;
 }
+
+p.note {
+    font-size: 0.5em;
+}

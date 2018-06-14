@@ -85,14 +85,15 @@ function chadsvasc() {
 			score += parseInt(radios[i].value);
 		}
 	}
+
+	$('#label-puntaje-chadsvasc').text(score.toString());
 	if (checked === questions) {
 		if ($('#chadsvasc-completado').text() !== 'Completa') {
-			alert('Escala CHADSVASC fue completada');
+			alert('Escala CHADSVASC fue completada. Puntaje: ' + score.toString());
 			filled_chadsvasc = true;
 		}
 		$('#chadsvasc-completado').text('Completa');
 	}
-	$('#label-puntaje-chadsvasc').text(score.toString());
 
 	// Change button from disabled to active or viceversa
 	if (used_chadsvasc) {
@@ -143,14 +144,15 @@ function glasgow() {
 			score += parseInt(radios[i].value);
 		}
 	}
+
+	$('#label-puntaje-glasgow').text(score.toString());
 	if (checked === questions) {
 		if ($('#glasgow-completado').text() !== 'Completa') {
-			alert('Escala Glasgow fue completada');
+			alert('Escala Glasgow fue completada. Puntaje: ' + score.toString());
 			filled_glasgow = true;
 		}
 		$('#glasgow-completado').text('Completa');
 	}
-	$('#label-puntaje-glasgow').text(score.toString());
 
 }
 
