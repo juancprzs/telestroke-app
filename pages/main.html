@@ -3,7 +3,8 @@
 <head>
 	<title>Telestroke: aplicación web</title>
 	<meta charset="UTF-8"> 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/bootstrap-4.1.1-dist/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body style="background-color: #f9f9f9;">
@@ -12,7 +13,7 @@
 
 	<!-- Módulo de datos personales -->
 	<div class='form-group rounded border' id='datos-personales'>
-		<h2>Modulo de datos personales:</h2>
+		<h2>Módulo de datos personales:</h2>
 		<label for="nombres">Nombres:</label><br>
 		<input type='text' name='nombres'><br>
 
@@ -51,7 +52,7 @@
 
 	<!-- Módulo de historia clínica -->
 	<div class='form-group rounded border' id='modulo-historia-clinica'>
-		<h2>Modulo de historia clínica:</h2>
+		<h2>Módulo de historia clínica:</h2>
 		<label for="historia-clinica">A continuación, por favor describa la enfermedad actual, haciendo énfasis en los signos y síntomas neurológicos del paciente y la hora de inicio de los mismos.</label><br>
 		<textarea name='sintomas' id='sintomas'></textarea><br>
 		<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
@@ -367,7 +368,7 @@
 
 	<!-- Módulo de exámen físico -->
 	<div class='form-group rounded border' id='modulo-examen-fisico'>
-		<h2>Modulo de examen físico:</h2>
+		<h2>Módulo de examen físico:</h2>
 		<label for="examen-fisico">A continuación, por favor describa los hallazgos relevantes al examen físico haciendo énfasis en el examen neurológico.</label><br>
 		<textarea id='examen-fisico'></textarea><br>
 
@@ -625,7 +626,7 @@
 				<form class="radio rounded border" name='1b_radios' style='margin-bottom: 1%;'>
 					<span class="row">
 						<span class="col-5">
-							<p><b>1B: Nivel de conciencia; preguntas verbales:<br>¿en qué mes estamos?<br>¿qué edad tiene?</b></p>
+							<p><b>1B: Nivel de conciencia; preguntas verbales: ¿en qué mes estamos?<br>¿qué edad tiene?</b></p>
 						</span>
 						<span class="col-7">
 							<span class="row">
@@ -633,7 +634,7 @@
 									<label class="radio"><b>Ambas respuestas son correctas<sup>+0</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='0' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1b" value='0' onclick='glasgow();'>
 								</span>
 							</span>
 							
@@ -642,7 +643,7 @@
 									<label class="radio"><b>Una respuesta correcta<sup>+1</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='1' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1b" value='1' onclick='glasgow();'>
 								</span>
 							</span>
 
@@ -651,7 +652,7 @@
 									<label class="radio"><b>Ninguna respuesta correcta<sup>+2</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='2' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1b" value='2' onclick='glasgow();'>
 								</span>
 							</span>
 
@@ -678,7 +679,7 @@
 									<label class="radio"><b>Ambas respuestas son correctas<sup>+0</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='0' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1c" value='0' onclick='glasgow();'>
 								</span>
 							</span>
 							
@@ -687,7 +688,7 @@
 									<label class="radio"><b>Una respuesta correcta<sup>+1</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='1' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1c" value='1' onclick='glasgow();'>
 								</span>
 							</span>
 
@@ -696,7 +697,7 @@
 									<label class="radio"><b>Ninguna respuesta correcta<sup>+2</sup></b></label>
 								</span>
 								<span class="col-2">
-									<input type="radio" name="respuesta-1a" value='2' onclick='glasgow();'>
+									<input type="radio" name="respuesta-1c" value='2' onclick='glasgow();'>
 								</span>
 							</span>
 
@@ -709,6 +710,250 @@
 						</span>
 					</span>
 				</form>
+
+				<!-- Item 2 -->
+				<form class="radio rounded border" name='2_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Mirada conjugada</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Normal<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-2" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Parálisis parcial de la mirada<sup>+1</sup>:</b> tendencia de la mirada que puede revertirse voluntariamente o con movimientos oculocefalógiros</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-2" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Parálisis total o desviación forzada<sup>+2</sup>:</b> incapacidad para revertir la desviación forzada con cualquier maniobra</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-2" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> sólo se evalúa la mirada horizontal, de manera voluntaria o con reflejo oculocefalógiros, no se permiten reflejos oculovestibulares. Si tiene parálisis del nervio craneal puntúa 1. Si un ojo está vendado, el examinador decidirá el puntaje por medio de la actividad voluntaria o refleja del ojo evaluable.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+				<!-- Item 3 -->
+				<form class="radio rounded border" name='3_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Campos visuales</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Normal<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-3" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Hemianopsia parcial<sup>+1</sup>:</b> cualquier defecto incompleto superior o inferior</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-3" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Hemianopsia completa<sup>+2</sup>:</b> incapacidad de contar o detectar movimiento en ambos cuadrantes</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-3" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Ceguera bilateral<sup>+3</sup>:</b> incapacidad para revertir las desviación forzada con cualquier maniobra</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-3" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> se examinan por confrontación explorando cuadrantes superior e inferior. Usar conteo o movimiento de dedos; la respuesta a la amenaza puede ser suficiente. Si hay ceguera bilateral de cualquier causa: 3 puntos. Si hay extinción visual: 1 punto.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+
+				<!-- Item 4 -->
+				<form class="radio rounded border" name='4_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Paresia facial</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Normal<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-4" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Paresia leve o menor<sup>+1</sup>:</b> asimetría al sonreir o en los surcos nasogenianos.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-4" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Paresia parcial<sup>+2</sup>:</b> paresia profunda de hemicara inferior al gesticular y a menudo en reposo</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-4" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Paresia total<sup>+3</sup>:</b> parálisis de toda la hemicara</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-4" value='3' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> se ordenan verbal o gestualmente movimientos como mostrar los dientes, levantar las cejas y cerrar fuertemente los ojos. Si hay barreras físicas debe intentar retirarlas. Use asimetrías en la gesticulación de la respuesta al dolor en aquellos pacientes que no comprenden o que tienen menor capacidad de respuesta.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+				<!-- Item 8 -->
+				<form class="radio rounded border" name='8_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Sensibilidad</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Normal<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-8" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Hipoestesia leve o moderada<sup>+1</sup>:</b> diferencia subjetiva leve a moderada de un lado a otro; el paciente siente que es tocado con una aguja pero manifiesta que es menos doloroso que en otro lado</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-8" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Pérdida severa o anestesia<sup>+2</sup>:</b> no percepción del hemicuerpo afectado, el paciente no siente o no se da cuenta que está siendo tocado</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-8" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-12">
+									<p class="note"><b>Nota:</b> espera juzgar sólo pérdida de sensibilidad atribuida al ACV; se explora con tantos estímulos y en tantas áreas como sea suficiente apra demostrar pérdida sensorial fuera de toda duda. En el paciente con profundo compromiso de conciencia o afásico se explora usando estímulo doloroso y juzgando la respuesta por gesticulación, por lo ranto, casi siempre puntuará 0 o 1. La pérdida bilateral como en lesión de tallo cerebral puntúa 2; la cuadriplejía en condición similar y los pacientes en coma puntúan 2.</p>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+
+				<!-- Item 9 -->
+				<form class="radio rounded border" name='9_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Lenguaje</b></p><br>
+							<p class="note"><b>Nota:</b> use las láminas de escritura y repetición. El paciente debe describir las láminas, nominar y leer la totalidad de las palabras y frases. En caso de ceguera, el paciente puede identificar objetos con la mano o puede repetir y producir lenguaje. Los paciente con IOT pueden examinarse con escritura y lectura. Los pacientes en coma puntúan 3.</p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Sin afasia<sup>+0</sup></b></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-9" value='0' onclick='glasgow();'>
+								</span>
+							</span>
+							
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Afasia moderada<sup>+1</sup>:</b> pérdida de fluidez verbal o limitación para la comprensión pero sin limitación significativa en la expresión o comprensión de ideas. Se usan láminas de escenas; el examinador puede saber de cuál se trata por la respuesta del paciente</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-9" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Afasia severa<sup>+2</sup>:</b> toda la comunicación se hace a través de la expresión argumentada. El examinador necesita mucha inferencia, muchas preguntas o adivinar para entender.</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-9" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio"><b>Mutista o <b>fasia</b> global<sup>+3</sup>:</b> capacidad de comprensión o expresión completamente inútil</label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-9" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+
+						</span>
+					</span>
+				</form>
+	
 
 				
 				<label id="nihss-completado" style='font-size: 140%; color: red;'>Sin completar</label>
