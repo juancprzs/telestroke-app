@@ -26,9 +26,9 @@ label {
     text-align:center;
     margin-top: 1%;
     margin-bottom: 0;
-    width: 40%;
-    margin-right: 30%;
-    margin-left: 30%;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 a {
@@ -49,6 +49,24 @@ form {
 }
 
 textarea {
-	max-width: 40%;
-	width: 40%;
+	max-width: 60%;
+	width: 60%;
+}
+
+#glasgow label {
+    text-align:center;
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.row p {
+    text-align:center;
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
 }

@@ -6,9 +6,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
-<body style="background-color: #eee;">
+<body style="background-color: #f9f9f9;">
 	<h1>TeleStroke</h1>
 	<p>Bienvenido al sistema TeleStroke</p>
+
+	<!-- Módulo de datos personales -->
 	<div class='form-group rounded border' id='datos-personales'>
 		<h2>Modulo de datos personales:</h2>
 		<label for="nombres">Nombres:</label><br>
@@ -44,26 +46,41 @@
 			<option value='a3'>Aseguradora 3</option>
 			<option value='a4'>Aseguradora 4</option>
 		</select><br>
-		<a class='btn btn-info btn-primary' role='button' id='validar-informacion' style='margin-top: 1%;'>Validar información</a>
+		<a class='btn btn-info btn-primary' role='button' id='validar-informacion' style='margin-top: 1%;' onclick="validate_info();">Validar información</a>
 	</div>
-	<div class='form-group rounded border' id='descripcion-sintomas'>
+
+	<!-- Módulo de historia clínica -->
+	<div class='form-group rounded border' id='modulo-historia-clinica'>
 		<h2>Modulo de historia clínica:</h2>
 		<label for="historia-clinica">A continuación, por favor describa la enfermedad actual, haciendo énfasis en los signos y síntomas neurológicos del paciente y la hora de inicio de los mismos.</label><br>
 		<textarea name='sintomas' id='sintomas'></textarea><br>
 		<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
 			<form class="radio" name='yes_no_radios'>
 				<span class="row">
-					<span class="col-7">
+					<span class="col-6">
 						<p>¿Tiene el paciente antecedentes de fibrilación auricular?</p>
 					</span>
-					<span class="col-4">
-						<label class="radio"> Sí</label>
-						<label class="radio"> No</label>
+					<span class="col-6">
+						
+						<span class="row">
+							<span class="col-10">
+								<label class="radio">Sí</label>
+							</span>
+							<span class="col-2">
+								<input type="radio" name="yes_no" value='yes'>
+							</span>
+						</span>
+
+						<span class="row">
+							<span class="col-10">
+								<label class="radio">No</label>
+							</span>
+							<span class="col-2">
+								<input type="radio" name="yes_no" value='no'>
+							</span>
+						</span>
 					</span>
-					<span class="col-1">
-						<input type="radio" name="yes_no" value='yes'><br>
-						<input type="radio" name="yes_no" value='no'>
-					</span>
+
 				</span>
 			</form>
 		</span>
@@ -74,124 +91,446 @@
 			<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
 				<form class="radio rounded border" name='edad_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Edad</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">< 65<sup>+0</sup></label>
-							<label class="radio">65-74<sup>+1</sup></label>
-							<label class="radio">&ge; 75<sup>+2</sup></label>
-						</span>
-						<span class="col-1">
-							<input type="radio" name="which_edad" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_edad" value='1' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_edad" value='2' onclick='chadsvasc();'><br>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">< 65<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_edad" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">65-74<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_edad" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">&ge; 75<sup>+2</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_edad" value='2' onclick='chadsvasc();'>
+								</span>
+							</span>
+
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='sexo_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Sexo</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">Hombre<sup>+0</sup></label>
-							<label class="radio">Mujer<sup>+1</sup></label>
-						</span>
-						<span class="col-1">
-							<input type="radio" name="which_sexo" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_sexo" value='1' onclick='chadsvasc();'><br>
+						<span class="col-6">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Hombre<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_sexo" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Mujer<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_sexo" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Historia de falla cardiaca</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">No<sup>+0</sup></label>
-							<label class="radio">Sí<sup>+1</sup></label>
-						</span>
-						<span class="col-1">
-							<input type="radio" name="which_falla_cardiaca" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_falla_cardiaca" value='1' onclick='chadsvasc();'><br>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">No<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_falla_cardiaca" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sí<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_falla_cardiaca" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
+
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Historia de hipertensión</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">No<sup>+0</sup></label>
-							<label class="radio">Sí<sup>+1</sup></label>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">No<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_hipertension" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sí<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_hipertension" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
+
 						</span>
-						<span class="col-1">
-							<input type="radio" name="which_hipertension" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_hipertension" value='1' onclick='chadsvasc();'><br>
-						</span>
+
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Historia de ataque isquémico transitorio, ataque cerebrovascular o tromboembolismo</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">No<sup>+0</sup></label>
-							<label class="radio">Sí<sup>+1</sup></label>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">No<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_historia" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sí<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_historia" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
 						</span>
-						<span class="col-1">
-							<input type="radio" name="which_historia" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_historia" value='1' onclick='chadsvasc();'><br>
-						</span>
+							
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Historia de enfermedad vascular</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">No<sup>+0</sup></label>
-							<label class="radio">Sí<sup>+1</sup></label>
-						</span>
-						<span class="col-1">
-							<input type="radio" name="which_enfermedad_vascular" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_enfermedad_vascular" value='1' onclick='chadsvasc();'><br>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">No<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_enfermedad_vascular" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sí<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_enfermedad_vascular" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
+
 						</span>
 					</span>
 				</form>
 
 				<form class="radio rounded border" name='falla_cardiaca_radios' style='margin-bottom: 1%;'>
 					<span class="row">
-						<span class="col-7">
+						<span class="col-6">
 							<p><b>Historia de diabetes</b></p>
 						</span>
-						<span class="col-4">
-							<label class="radio">No<sup>+0</sup></label>
-							<label class="radio">Sí<sup>+1</sup></label>
+						<span class="col-6">
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">No<sup>+0</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_diabetes" value='0' onclick='chadsvasc();'>
+								</span>
+							</span>
+
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sí<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="which_diabetes" value='1' onclick='chadsvasc();'>
+								</span>
+							</span>
 						</span>
-						<span class="col-1">
-							<input type="radio" name="which_diabetes" value='0' onclick='chadsvasc();'><br>
-							<input type="radio" name="which_diabetes" value='1' onclick='chadsvasc();'><br>
-						</span>
+
 					</span>
 				</form>
-
+				<label id="chadsvasc-completado" style='font-size: 140%; color: red;'>Sin completar</label>
 				<span class="row">
 					<span class="col">
 						<p><b>Puntaje</b></p>
 					</span>
 					<span class="col">
-						<label class="radio" id="label-puntaje-chadsvasc">0</label>
+						<label class="radio" id="label-puntaje-chadsvasc" style='font-size: 140%; color: red;'>0</label>
+					</span>
+				</span>
+			</span>
+
+		</div>
+
+		<div class='form-group rounded border' id='anticoagulantes-orales' style='width: 98%; margin-right: 1%;margin-left: 1%; margin-bottom: 1%;'>
+			<h3>Uso de nuevos anticoagulantes orales</h3>
+			<h4>Seleccione a continuación la opción según corresponda a la historia del paciente</h4>
+			<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
+				<form class="radio rounded border" name='edad_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Anticoagulantes</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="checkbox">Apixaban</label>
+								</span>
+								<span class="col-2">
+									<input type="checkbox" name="anticoags" value='Apixaban' onclick='list_anticoagulantes();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="checkbox">Dabigatrán</label>
+								</span>
+								<span class="col-2">
+									<input type="checkbox" name="anticoags" value='Dabigatrán' onclick='list_anticoagulantes();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="checkbox">Ribaroxabán</label>
+								</span>
+								<span class="col-2">
+									<input type="checkbox" name="anticoags" value='Ribaroxabán' onclick='list_anticoagulantes();'>
+								</span>
+							</span>
+						</span>
+					</span>
+				</form>
+
+				
+				<span class="row">
+					<span class="col">
+						<p><b>Anticoagulantes seleccionados:</b></p>
+					</span>
+					<span class="col">
+						<label id="lista_de_anticoagulantes">Ninguno</label>
+					</span>
+				</span>
+			</span>
+
+			<a class='btn btn-info btn-primary disabled' role='button' id='continuar-examen-fisico' style='margin-top: 1%;' onclick="continue_phys_exam()">Continuar a módulo de examen físico</a>
+
+		</div>
+	</div>
+
+	<!-- Módulo de exámen físico -->
+	<div class='form-group rounded border' id='modulo-examen-fisico'>
+		<h2>Modulo de examen físico:</h2>
+		<label for="examen-fisico">A continuación, por favor describa los hallazgos relevantes al examen físico haciendo énfasis en el examen neurológico.</label><br>
+		<textarea id='examen-fisico'></textarea><br>
+
+		<div class='form-group rounded border' id='glasgow' style='width: 98%; margin-right: 1%;margin-left: 1%; margin-bottom: 1%;'>
+			<h3>Escala de Glasgow</h3>
+			<h4>Seleccione a continuación la opción según corresponda a la historia del paciente</h4>
+			<span class="container" style='width: 90%; margin-right: 5%;margin-left: 5%; margin-bottom: 1%;'>
+				<form class="radio rounded border" name='resp_ocular_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Respuesta ocular</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Ausente<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-ocular" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Al dolor<sup>+2</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-ocular" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Al llamado<sup>+3</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-ocular" value='3' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Espontánea<sup>+4</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-ocular" value='4' onclick='glasgow();'>
+								</span>
+							</span>
+						</span>
+					</span>
+				</form>
+
+				<form class="radio rounded border" name='resp_verbal_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Respuesta verbal</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Ausente<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-verbal" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Sonidos imcomprensibles<sup>+2</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-verbal" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Palabras inapropiadas<sup>+3</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-verbal" value='3' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Confuso o desorientado<sup>+4</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-verbal" value='4' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Orientado<sup>+5</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-verbal" value='5' onclick='glasgow();'>
+								</span>
+							</span>
+						</span>
+					</span>
+				</form>
+
+				<form class="radio rounded border" name='resp_motora_radios' style='margin-bottom: 1%;'>
+					<span class="row">
+						<span class="col-5">
+							<p><b>Respuesta motora</b></p>
+						</span>
+						<span class="col-7">
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Ausente<sup>+1</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='1' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Extensión anormal al dolor<sup>+2</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='2' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Flexión anormal al dolor<sup>+3</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='3' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Retira al dolor<sup>+4</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='4' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Localiza el dolor<sup>+5</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='5' onclick='glasgow();'>
+								</span>
+							</span>
+							<span class="row">
+								<span class="col-10">
+									<label class="radio">Obedece órdenes sencillas<sup>+6</sup></label>
+								</span>
+								<span class="col-2">
+									<input type="radio" name="respuesta-motora" value='6' onclick='glasgow();'>
+								</span>
+							</span>
+						</span>
+					</span>
+				</form>
+				<label id="glasgow-completado" style='font-size: 140%; color: red;'>Sin completar</label>
+				<span class="row">
+					<span class="col">
+						<p><b>Puntaje</b></p>
+					</span>
+					<span class="col">
+						<label class="radio" id="label-puntaje-glasgow" style='font-size: 140%; color: red;'>0</label>
 					</span>
 				</span>
 			</span>
